@@ -1,0 +1,121 @@
+.price {
+  margin-bottom: 1rem;
+
+  &__header {
+    padding: 1rem 1rem 0;
+    margin-bottom: 2rem;
+
+    &-container {
+      background: linear-gradient(90deg, rgba(103, 235, 0, 0) 40%, $white 60%);
+      display: flex;
+      align-items: center;
+      height: 56px;
+
+      & > .brands__title {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &-slider {
+    &__item {
+      background-color: $white;
+      min-width: 260px;
+      height: 200px;
+      border-radius: 6px;
+      padding: 1rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-sup {
+        font-size: 0.8rem;
+        color: $grey-text;
+        margin-bottom: 4px;
+      }
+
+      &-title {
+        margin: 0;
+        font-weight: 400;
+        font-size: 0.8rem;
+      }
+    }
+
+    &__button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      width: 120px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .price {
+    margin-bottom: 1.5rem;
+    &__header {
+      padding: 1rem 1.5rem 0;
+    }
+
+    &-slider {
+      &__button {
+        position: static;
+        margin-left: auto;
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      &__item {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr 1fr;
+        align-items: center;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+        gap: 1.3rem;
+
+        &-container:not(:first-child) {
+          display: flex;
+          justify-content: center;
+        }
+
+        &-sup {
+          display: none;
+        }
+
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 3rem);
+          height: 1px;
+          background-color: $grey;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .price {
+    margin-bottom: 2rem;
+
+    &__header {
+      padding: 1rem 2rem 0;
+    }
+
+    &-slider {
+      &__item {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+    }
+  }
+}

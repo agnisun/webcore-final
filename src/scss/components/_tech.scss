@@ -1,0 +1,33 @@
+.tech {
+  margin-bottom: 1.5rem;
+
+  &-slider {
+    &__item {
+      min-width: 240px;
+      padding: 1rem;
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      border: 1px solid $grey;
+      border-radius: 6px;
+
+      &-text {
+        font-weight: 600;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tech {
+    &-slider {
+      &__item {
+        min-width: auto;
+      }
+    }
+  }
+}

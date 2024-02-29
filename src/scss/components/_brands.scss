@@ -1,0 +1,99 @@
+.brands {
+  margin-bottom: 1.5rem;
+
+  &__title {
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1rem 1rem 0;
+  }
+
+  &-slider {
+    position: relative;
+
+    &__inner {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 0 1rem;
+      gap: 1rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      margin-bottom: 1rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__item {
+      height: 72px;
+      min-width: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-radius: 6px;
+      background-color: $white;
+      border: 1px solid $grey;
+
+      &-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-drop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid $red;
+        min-width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .brands {
+    &__title {
+      padding: 1rem 1.5rem 0;
+    }
+
+    &-slider {
+      &__inner {
+        overflow: hidden;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 1.5rem;
+        gap: 1.5rem;
+      }
+
+      &__item {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .brands {
+    &__title {
+      padding: 1rem 2rem 0;
+      margin-bottom: 2.5rem;
+    }
+
+    &-slider {
+      &__inner {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+  }
+}
