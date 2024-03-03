@@ -1,7 +1,7 @@
 export function useSlider(block, total1, total2) {
   const mobileSlider = function () {
-    const sliderItems = document.querySelectorAll(`.${block}-slider__item`)
-    const sliderDots = document.getElementById(`${block}-slider__dots`)
+    const sliderItems = document.querySelectorAll(`.slider__item--${block}`)
+    const sliderDots = document.getElementById(`slider__dots--${block}`)
     const slider = document.getElementById(`${block}-slider`)
 
     let isInitialize = false
@@ -89,7 +89,7 @@ export function useSlider(block, total1, total2) {
 
     const hideItems = function () {
       const sliderItemsElement = document.querySelectorAll(
-        `.${block}-slider__item`
+        `.slider__item--${block}`
       )
 
       sliderItemsElement.forEach((item, i) => {
@@ -104,7 +104,7 @@ export function useSlider(block, total1, total2) {
     }
     const showItems = function () {
       const sliderInnerElement = document.getElementsByClassName(
-        `${block}-slider__inner`
+        `slider__inner--${block}`
       )[0]
 
       while (hiddenElements.length) {

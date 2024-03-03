@@ -11,24 +11,27 @@
       align-items: center;
       height: 56px;
 
-      & > .brands__title {
+      & > .slider__title {
         padding: 0;
         margin: 0;
       }
     }
   }
 
-  &-slider {
+  .slider {
     &__item {
-      background-color: $white;
-      min-width: 260px;
-      height: 200px;
-      border-radius: 6px;
-      padding: 1rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      &--price {
+        background-color: $white;
+        min-width: 260px;
+        height: 200px;
+        border-radius: 6px;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
 
       &-sup {
         font-size: 0.8rem;
@@ -59,26 +62,29 @@
       padding: 1rem 1.5rem 0;
     }
 
-    &-slider {
+    .slider {
       &__button {
         position: static;
         margin-left: auto;
       }
 
-      &__inner {
+      &__inner--price {
         display: flex;
         flex-direction: column;
         gap: 0;
       }
 
       &__item {
-        display: grid;
-        grid-template-columns: 4fr 1fr 1fr 1fr;
-        align-items: center;
-        height: auto;
-        position: relative;
-        padding: 1.5rem;
-        gap: 1.3rem;
+        border: 0;
+        &--price {
+          display: grid;
+          grid-template-columns: 4fr 1fr 1fr 1fr;
+          align-items: center;
+          height: auto;
+          position: relative;
+          padding: 1.5rem;
+          gap: 1.3rem;
+        }
 
         &-container:not(:first-child) {
           display: flex;
@@ -112,8 +118,8 @@
       padding: 1rem 2rem 0;
     }
 
-    &-slider {
-      &__item {
+    .slider {
+      &__item--price {
         grid-template-columns: 2fr 1fr 1fr 1fr;
       }
     }
