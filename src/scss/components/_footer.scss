@@ -1,14 +1,14 @@
 .footer {
   padding: 0 1rem 1.25rem;
 
-  &-info {
-    &__text {
+  &__info {
+    &-text {
       font-size: 0.8rem;
       margin: 0 0 1rem;
       max-width: 420px;
     }
 
-    &__anchor {
+    &-anchor {
       text-decoration: none;
       color: inherit;
       font-weight: 600;
@@ -19,7 +19,7 @@
     }
   }
 
-  &-copyright {
+  &__copyright {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -27,7 +27,7 @@
     color: $grey-text;
     font-size: 0.8rem;
 
-    &__text {
+    &-text {
       margin: 0;
     }
   }
@@ -37,16 +37,16 @@
   .footer {
     padding: 0 1.5rem 2.5rem;
 
-    &-copyright {
+    &__copyright {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2;
 
-      &__text:first-child {
+      &-text:first-child {
         text-align: left;
       }
 
-      &__text:last-child {
+      &-text:last-child {
         text-align: right;
       }
     }
