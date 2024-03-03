@@ -952,74 +952,10 @@ template {
 
 .brands {
   margin-bottom: 1.5rem; }
-  .brands__title {
-    margin: 0 0 2rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 1rem 1rem 0; }
-  .brands-slider {
-    position: relative; }
-    .brands-slider__inner {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding: 0 1rem;
-      gap: 1rem;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      margin-bottom: 1rem; }
-      .brands-slider__inner::-webkit-scrollbar {
-        display: none; }
-    .brands-slider__item {
-      height: 72px;
-      min-width: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      padding: 1rem;
-      border-radius: 6px;
-      background-color: #fff;
-      border: 1px solid #b5b6bc; }
-      .brands-slider__item-image {
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-      .brands-slider__item-drop {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        background-color: transparent;
-        border: 2px solid #ff3e79;
-        min-width: 40px;
-        height: 40px; }
-
-@media screen and (min-width: 768px) {
-  .brands__title {
-    padding: 1rem 1.5rem 0; }
-  .brands-slider__inner {
-    overflow: hidden;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 1.5rem;
-    gap: 1.5rem; }
-  .brands-slider__item {
-    min-width: auto; } }
-
-@media screen and (min-width: 1120px) {
-  .brands__title {
-    padding: 1rem 2rem 0;
-    margin-bottom: 2.5rem; }
-  .brands-slider__inner {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem; } }
 
 .tech {
   margin-bottom: 1.5rem; }
-  .tech-slider__item {
+  .tech .slider__item--tech {
     min-width: 240px;
     padding: 1rem;
     height: 160px;
@@ -1029,13 +965,13 @@ template {
     align-items: flex-end;
     border: 1px solid #b5b6bc;
     border-radius: 6px; }
-    .tech-slider__item-text {
-      font-weight: 600;
-      width: 100%;
-      margin: 0; }
+  .tech .slider__item-text--tech {
+    font-weight: 600;
+    width: 100%;
+    margin: 0; }
 
 @media screen and (min-width: 768px) {
-  .tech-slider__item {
+  .tech .slider__item--tech {
     min-width: auto; } }
 
 .price {
@@ -1048,10 +984,10 @@ template {
       display: flex;
       align-items: center;
       height: 56px; }
-      .price__header-container > .brands__title {
+      .price__header-container > .slider__title {
         padding: 0;
         margin: 0; }
-  .price-slider__item {
+  .price .slider__item--price {
     background-color: #fff;
     min-width: 260px;
     height: 200px;
@@ -1060,16 +996,17 @@ template {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
-    .price-slider__item-sup {
-      font-size: 0.8rem;
-      color: #7e7e82;
-      margin-bottom: 4px; }
-    .price-slider__item-title {
-      margin: 0;
-      font-weight: 400;
-      font-size: 0.8rem; }
-  .price-slider__button {
+    justify-content: space-between;
+    align-items: flex-start; }
+  .price .slider__item-sup {
+    font-size: 0.8rem;
+    color: #7e7e82;
+    margin-bottom: 4px; }
+  .price .slider__item-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.8rem; }
+  .price .slider__button {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -1080,27 +1017,29 @@ template {
     margin-bottom: 1.5rem; }
     .price__header {
       padding: 1rem 1.5rem 0; }
-    .price-slider__button {
+    .price .slider__button {
       position: static;
       margin-left: auto; }
-    .price-slider__inner {
+    .price .slider__inner--price {
       display: flex;
       flex-direction: column;
       gap: 0; }
-    .price-slider__item {
-      display: grid;
-      grid-template-columns: 4fr 1fr 1fr 1fr;
-      align-items: center;
-      height: auto;
-      position: relative;
-      padding: 1.5rem;
-      gap: 1.3rem; }
-      .price-slider__item-container:not(:first-child) {
+    .price .slider__item {
+      border: 0; }
+      .price .slider__item--price {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr 1fr;
+        align-items: center;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+        gap: 1.3rem; }
+      .price .slider__item-container:not(:first-child) {
         display: flex;
         justify-content: center; }
-      .price-slider__item-sup {
+      .price .slider__item-sup {
         display: none; }
-      .price-slider__item:not(:last-child)::after {
+      .price .slider__item:not(:last-child)::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -1115,16 +1054,16 @@ template {
     margin-bottom: 2rem; }
     .price__header {
       padding: 1rem 2rem 0; }
-    .price-slider__item {
+    .price .slider__item--price {
       grid-template-columns: 2fr 1fr 1fr 1fr; } }
 
 .footer {
   padding: 0 1rem 1.25rem; }
-  .footer-info__text {
+  .footer__info-text {
     font-size: 0.8rem;
     margin: 0 0 1rem;
     max-width: 420px; }
-  .footer-info__anchor {
+  .footer__info-anchor {
     text-decoration: none;
     color: inherit;
     font-weight: 600;
@@ -1132,26 +1071,26 @@ template {
     align-items: center;
     gap: 10px;
     margin-bottom: 2.5rem; }
-  .footer-copyright {
+  .footer__copyright {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     text-align: center;
     color: #7e7e82;
     font-size: 0.8rem; }
-    .footer-copyright__text {
+    .footer__copyright-text {
       margin: 0; }
 
 @media screen and (min-width: 768px) {
   .footer {
     padding: 0 1.5rem 2.5rem; }
-    .footer-copyright {
+    .footer__copyright {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2; }
-      .footer-copyright__text:first-child {
+      .footer__copyright-text:first-child {
         text-align: left; }
-      .footer-copyright__text:last-child {
+      .footer__copyright-text:last-child {
         text-align: right; } }
 
 @media screen and (min-width: 1120px) {
@@ -1208,6 +1147,12 @@ ul {
 
 .slider {
   position: relative; }
+  .slider__title {
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1rem 1rem 0; }
   .slider__fade {
     position: absolute;
     top: 0;
@@ -1236,6 +1181,41 @@ ul {
       background-color: #dddddd; }
       .slider__dots > li.active {
         background-color: #b5b6bc; }
+  .slider__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 1rem;
+    gap: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 1rem; }
+    .slider__inner::-webkit-scrollbar {
+      display: none; }
+  .slider__item {
+    height: 72px;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #b5b6bc; }
+    .slider__item-image {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .slider__item-drop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 2px solid #ff3e79;
+      min-width: 40px;
+      height: 40px; }
   .slider__show {
     padding: 0;
     border: 0;
@@ -1256,6 +1236,17 @@ ul {
 @media screen and (min-width: 768px) {
   .slider {
     padding: 0 1.5rem; }
+    .slider__title {
+      padding: 1rem 1.5rem 0; }
+    .slider__inner {
+      overflow: hidden;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 1.5rem;
+      gap: 1.5rem; }
+    .slider__item {
+      min-width: auto; }
     .slider__fade {
       display: none !important; }
     .slider__dots {
@@ -1265,7 +1256,13 @@ ul {
 
 @media screen and (min-width: 1120px) {
   .slider {
-    padding: 0 2rem; } }
+    padding: 0 2rem; }
+    .slider__title {
+      padding: 1rem 2rem 0;
+      margin-bottom: 2.5rem; }
+    .slider__inner {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2rem; } }
 
 @media screen and (min-width: 1440px) {
   main {
